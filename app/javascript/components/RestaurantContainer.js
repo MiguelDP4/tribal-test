@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Restaurant from "./RestaurantCard";
+
 const RestaurantContainer = props => {
   const {restaurants} = props
   return (
