@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import images from "../packs/images";
+import Comment from "./Comment";
+import CommentList from "./CommentList";
 import restaurantImages from '../packs/restaurantImages';
 
 const RestaurantDetail = props => {
@@ -13,6 +15,8 @@ const RestaurantDetail = props => {
         <h2>{restaurant.name}</h2>
         <p>{restaurant.description}</p>
       </div>
+      <Comment key={`${restaurant.nameId}-comment-form`} restaurant={restaurant} />
+      <CommentList key={`${restaurant.nameId}-comment-list`} restaurant={restaurant} />
     </div>
   );
 }

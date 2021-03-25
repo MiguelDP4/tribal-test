@@ -21,6 +21,7 @@ const {
           <Route
             path="/"
             exact
+            key={`restaurant-list`}
             render={() => (
               <RestaurantContainer restaurants={restaurants} />
             )}
@@ -28,6 +29,7 @@ const {
           {restaurants.map(restaurant => (
             <Route 
               path={`/${restaurant.nameId}`}
+              key={`${restaurant.nameId}-detail`}
               render={() => (
                 <RestaurantDetail key={`/${restaurant.nameId}`} restaurant={restaurant} />
               )}

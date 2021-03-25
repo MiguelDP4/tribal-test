@@ -1,0 +1,1 @@
+json.array! @restaurants, :id, :nameId, :name, :description
