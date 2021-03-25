@@ -10,7 +10,7 @@ const RestaurantCard = props => {
       <img src={image.content} alt={`${restaurant.nameId}-logo`} />
       <h4>{restaurant.name}</h4>
       <p>{restaurant.description}</p>
-      <a href="#">VER MAS</a>
+      <a href={`pages/restaurant/${restaurant.id}`}>VER MAS</a>
     </div>
   );
 };
