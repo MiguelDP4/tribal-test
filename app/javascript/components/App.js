@@ -1,23 +1,43 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
+import Header from "./Header";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import RestaurantContainer from '../components/RestaurantContainer';
+import RestaurantDetail from './RestaurantDetail';
 
 const App = props => {
-  const {
-          title,
-          description,
-          restaurants
-        } = props
-    return (
-      <div>
-        <div className="page-title-card">
-          <h2>{title}</h2>
-          <p>{description}</p>
-        </div>
-        <RestaurantContainer restaurants={restaurants} />
-        <footer>FOOTER</footer>
+const {
+        title,
+        description,
+        restaurants
+      } = props
+  return (
+    <div>
+      <div className="page-title-card">
       </div>
-    );
+      <Router>
+        <Header/>
+        <Switch>
+          <Route
+            path="/"
+            exact
+            render={() => (
+              <RestaurantContainer restaurants={restaurants} />
+            )}
+          />
+          {restaurants.map(restaurant => (
+            <Route 
+              path={`/${restaurant.nameId}`}
+              render={() => (
+                <RestaurantDetail key={`/${restaurant.nameId}`} restaurant={restaurant} />
+              )}
+            />
+          ))}
+        </Switch>
+      </Router>
+      <footer>FOOTER</footer>
+    </div>
+  );
 }
 
 App.propTypes = {
