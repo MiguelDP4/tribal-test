@@ -1,47 +1,65 @@
 import React from "react";
 import PropTypes from "prop-types";
+import axios from 'axios';
 
 class Comment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: props.post.name,
-      content: props.post.content
+      name: '',
+      content: ''
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleContentChange = this.handleContentChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleTitleChange(e) {
-    this.setState({ title: e.target.value });
+  handleSubmit = e => {
+    e.preventDefault();
+    const comment = {
+      name: this.state.name,
+      content: this.state.content
+    }
+    axios
+      .post(`/api/restaurant/${this.props.restaurant.id}/comment`, comment)
+      .then(response => {
+        console.log(response);
+        console.log(response.date);
+      })
   }
 
-  handleContentChange(e) {
+  handleNameChange = e => {
+    this.setState({ name: e.target.value });
+  }
+
+  handleContentChange = e => {
     this.setState({ content: e.target.value });
   }
 
   render() {
     return(
       <div>
-        <label>Title</label>
+        <label>Name</label>
         <input
           type="text"
           name="post[name]"
-          value={this.state.title}
-          onChange={this.handleTitleChange}
+          value={this.state.name}
+          onChange={this.handleNameChange}
         />
 
         <label>Content</label>
-        <input
+        <textarea
           type="text"
           name="post[content]"
           value={this.state.content}
           onChange={this.handleContentChange}
         />
 
-        <input type="submit" value="Update Post" />
+        <input type="submit" value="Update Post" onClick={this.handleSubmit}/>
       </div>
     );
   }
 }
 
+
+export default Comment;
