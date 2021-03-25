@@ -1,8 +1,8 @@
 import logo1 from "images/logos/bread-grind-logo.png"
 import logo2 from "images/logos/ham-and-eggs-logo.png"
-import logo3 from "images/logos/italian-logo.jpg"
+import logo3 from "images/logos/italian-logo.png"
 import logo4 from "images/logos/japanese-food-logo.png"
-import logo5 from "images/logos/mxdowells-logo.jpg"
+import logo5 from "images/logos/mxdowells-logo.png"
 import logo6 from "images/logos/pops-logo.png"
 
 
