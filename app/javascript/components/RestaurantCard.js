@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import logo1 from "images/logos/bread-grind-logo.png";
+import images from "../packs/images";
 
 const RestaurantCard = props => {
   const {restaurant} = props;
+  const image = images.find(i => i.nameId === restaurant.nameId);
   return (
     <div className="restaurant">
-      <img src={logo1} alt={`${restaurant.nameId}-logo`} />
+      <img src={image.content} alt={`${restaurant.nameId}-logo`} />
       <h4>{restaurant.name}</h4>
       <p>{restaurant.description}</p>
       <a href="#">VER MAS</a>

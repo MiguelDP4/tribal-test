@@ -6,7 +6,7 @@ const RestaurantContainer = props => {
   return (
     <div className="restaurant-container">
       {restaurants.map(restaurant => (
-        <Restaurant restaurant={restaurant}/>
+        <Restaurant key={restaurant.name} restaurant={restaurant}/>
       ))}
     </div>
   );
