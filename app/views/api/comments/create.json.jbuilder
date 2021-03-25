@@ -1,0 +1,1 @@
+json.extract! @new_comment, :id, :name, :content, :restaurant_id

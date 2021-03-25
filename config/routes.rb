@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get 'restaurants',                to: 'restaurants#index'
 
     get 'restaurant/:restaurant_id/comments',   to: 'comments#index'
+    post 'restaurant/:restaurant_id/comment',   to: 'comments#create'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
