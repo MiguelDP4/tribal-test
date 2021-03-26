@@ -12,7 +12,7 @@ const {
         restaurants
       } = props
   return (
-    <div>
+    <div className="app">
       <div className="page-title-card">
       </div>
       <Router>
@@ -37,7 +37,9 @@ const {
           ))}
         </Switch>
       </Router>
-      <footer>FOOTER</footer>
+      <footer>
+        <a href="https://www.linkedin.com/in/miguel-angel-dubois/">MIGUEL DUBOIS</a>
+      </footer>
     </div>
   );
 }

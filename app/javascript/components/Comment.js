@@ -38,11 +38,12 @@ class Comment extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className='comment-form'>
         <label>Name</label>
         <input
           type="text"
           name="post[name]"
+          className="name-input"
           value={this.state.name}
           onChange={this.handleNameChange}
         />
@@ -51,11 +52,12 @@ class Comment extends React.Component {
         <textarea
           type="text"
           name="post[content]"
+          className="content-input"
           value={this.state.content}
           onChange={this.handleContentChange}
         />
 
-        <input type="submit" value="Update Post" onClick={this.handleSubmit}/>
+        <input className="comment-button" type="submit" value="Post Comment" onClick={this.handleSubmit}/>
       </div>
     );
   }
