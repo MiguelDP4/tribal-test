@@ -28,7 +28,7 @@ class CommentList extends React.Component {
     const { loading, comments } = this.state;
     const { restaurant } = this.props;
     return(
-      <div>
+      <div className='comment-box'>
         { 
           loading ? 
           (<div>Loading...</div>) : 

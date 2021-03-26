@@ -12,8 +12,10 @@ const RestaurantDetail = props => {
     <div className='restaurant-detail-container'>
       <div className='restaurant-detail-header'>
         <img src={image.content} alt='restaurant-logo'/>
-        <h2>{restaurant.name}</h2>
-        <p>{restaurant.description}</p>
+        <div className='restaurant-detail-info'>
+          <h2>{restaurant.name}</h2>
+          <p>{restaurant.description}</p>
+        </div>
       </div>
       <Comment key={`${restaurant.nameId}-comment-form`} restaurant={restaurant} />
       <CommentList key={`${restaurant.nameId}-comment-list`} restaurant={restaurant} />

@@ -9,7 +9,7 @@ const RestaurantCard = props => {
   return (
     <div className="restaurant">
       <img src={image.content} alt={`${restaurant.nameId}-logo`} />
-      <h4>{restaurant.name}</h4>
+      <h3>{restaurant.name}</h3>
       <p>{restaurant.description}</p>
       <Link to={`/${restaurant.nameId}`}>VER MAS</Link>
     </div>
